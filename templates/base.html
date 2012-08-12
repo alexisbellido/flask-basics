@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+<title>Hello from Flask</title>
+</head>
+<body>
+<p>This is from the base.html template and below goes the body block.</p>
+{% block body %}
+<p>I come from the super body</p>
+{% endblock %}
+</body>
+</html>

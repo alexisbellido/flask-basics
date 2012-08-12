@@ -1,0 +1,10 @@
+{% extends "base.html" %} 
+
+{% block body %}
+{{ super() }}
+{% if name %}
+  <h1>Hello {{ name }}!, how you doing?</h1>
+{% else %}
+  <h1>Hello World!</h1>
+{% endif %}
+{% endblock %}
