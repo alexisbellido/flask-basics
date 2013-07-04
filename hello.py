@@ -29,4 +29,4 @@ def show_post(post_id):
 
 app.debug = True
 if __name__ == '__main__':
-    app.run(host='192.168.0.185')
+    app.run(host='0.0.0.0')
