@@ -1,5 +1,7 @@
 {% extends "base.html" %} 
 
+{% block title %}{{ super() }} | Hello{% endblock title %}
+
 {% block body %}
 {{ super() }}
 {% if name %}
@@ -7,4 +9,4 @@
 {% else %}
   <h1>Hello World!</h1>
 {% endif %}
-{% endblock %}
+{% endblock body %}

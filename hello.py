@@ -5,14 +5,20 @@ from flask import request
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def  index():
-    return 'Index page'
+    return 'Index page. Method: %s' % request.method
 
-@app.route('/hello/')
-@app.route('/hello/<name>')
-def  hello(name=None):
-    app.logger.debug('This is the logger line for %s' % name)
+@app.route('/hello/', methods=['GET', 'POST'])
+@app.route('/hello/<name>', methods=['GET', 'POST'])
+def  hello(name='Anybody'):
+    print "request method", request.method
+    print "key", request.args.get('key', '')
+    if request.method == 'POST':
+        #print "username", request.form['username']
+        name = request.form.get('username', 'no username')
+        print "username", name
+    #app.logger.debug('This is the logger line for %s' % name)
     return render_template('hello.html', name=name)
 
 @app.route('/user/<username>')
