@@ -15,6 +15,10 @@ def  index():
 
     #return 'Index page. Method: %s' % request.method
 
+@app.route('/custom-response')
+def  custom_response():
+    return ('Text', 200, {'Custom-Header': 'Some Value'})
+
 @app.route('/hello/', methods=['GET', 'POST'])
 @app.route('/hello/<name>', methods=['GET', 'POST'])
 def  hello(name='Anybody'):
