@@ -4,8 +4,13 @@ from flask import request
 from flask import make_response
 from flask import abort, redirect, escape, session
 
+NUMBER = 13
 
 app = Flask(__name__)
+app.config.from_object(__name__)
+app.config.from_envvar('APP_SETTINGS', silent=True)
+print "app.config NUMBER", app.config['NUMBER']
+print "app.config LETTER", app.config['LETTER']
 
 @app.route('/', methods=['GET', 'POST'])
 def  index():
