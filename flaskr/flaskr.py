@@ -104,5 +104,8 @@ def logout():
 
 
 if __name__ == '__main__':
-    init_db()
+    #pass
+    # TODO check if database already exists before trying to create
+    #init_db()
+    #print app.config['DATABASE']
     app.run()
